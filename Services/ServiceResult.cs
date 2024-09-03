@@ -9,10 +9,10 @@ namespace Services;
 /// <remarks>Why? Because its adheres to separation of concern principle</remarks>
 public class ServiceResult<T> where T : class
 {
-	public T? Data { get; set; }
+	public bool Success { get; set; }
 	public HttpStatusCode? HttpResponse { get; set; }
 	public string? Message { get; set; }
-	public bool Success { get; set; }
+	public T? Data { get; set; }
 	
 	public ServiceResult()
 	{

@@ -2,7 +2,9 @@ using System.Reflection;
 using DAL;
 using Mapster;
 using Microsoft.EntityFrameworkCore;
+using Services;
 using Services.EmployeeService;
+using Services.OfficeService;
 using Services.ResponseService;
 
 TypeAdapterConfig.GlobalSettings.Default.PreserveReference(true);
@@ -15,6 +17,8 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 builder.Services.AddScoped<IEmployeeService, EmployeeService>();
 builder.Services.AddScoped<IEmployeeBll, EmployeeBll>();
 builder.Services.AddScoped<IResponseService, ResponseService>();
+builder.Services.AddScoped<IOfficeBll, OfficeBll>();
+builder.Services.AddScoped<IOfficeService, OfficeService>();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c =>
 {
@@ -27,7 +31,6 @@ builder.Services.AddSwaggerGen(c =>
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
@@ -48,7 +51,6 @@ else
 }
 
 app.UseHttpsRedirection();
-app.UseStaticFiles();
 
 app.UseRouting();
 
