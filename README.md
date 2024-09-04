@@ -18,13 +18,14 @@ Der findes en employee med id: 22 og 3 offices med id 1,2 og 3
 
 **********************************************************************************************
 
-Jeg har valgt at anvende en N-layer pattern for den logiske indeling af kodebasen.  Man skulle meget gerne bare spinne API op via launchsettings og se swagger og teste der igennem.
+Man skulle meget gerne bare spinne API op via launchsettings og se swagger og teste der igennem.
+
+Jeg har valgt at anvende en N-layer pattern for den logiske indeling af kodebasen.
+I N-lags mønster går dataflow fra top til bund,  API --> Services --> DAl, med N-lag overholder vi Separation of concern princippet imellem lagene, derudover sikre vi at data ikke flyder den forkerte retning,  de alle sammen har en reference til Infrastruktur biblioteket som indeholder nuget pakker. 
 
 Udover dette er der anvendt vertical slice architecture for at indele koden i features og ikke i tekniske detalje, hvilket giver bedre overblik og maintainability.
 
 Der er anvendt request-response pattern præsentations laget ( api )
-
-I N-lags mønster går dataflow fra top til bund,  API --> Services --> DAl, de alle sammen har en reference til Infrastruktur biblioteket som indeholder nuget pakker.
 
 BLL ( Business logic laget ) somn findes i service bibloteket agere som en higher orchestration som sikre at der ikke kommer cirkulære afhængigheder imellem servisene.
 
