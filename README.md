@@ -1,8 +1,24 @@
 # NorlysTest
 
 Til denne opgave er der blevet anvendt, Separation of concerns, Vertical slice architecture, N-layer pattern ( ikke N-Tier ), Request-Response pattern,SOLID
+Der er blevet anvendt en sql lite database app.db for at gøre det nemt mht. miljøer.
 
-Jeg har valgt at anvende en N-layer pattern for den logiske indeling af kodebasen. Der er blevet anvendt en sql lite database app.db for at gøre det nemt mht. miljøer. Man skulle meget gerne bare spinne API op via launchsettings og se swagger og teste der igennem.
+For at se app.db i visual studio gør følgende :
+
+1.Go to Extensions > Manage Extensions.
+2.In the search box, type SQLite/SQL Server Compact Toolbox.
+3.Install the extension. This toolbox allows you to easily connect to and browse SQLite database files.
+4.Restart Visual Studio after installing the extension.
+5.After installing the extension, go to View > SQL Server Compact/SQLite Toolbox to open the toolbox window.
+6.In the toolbox window, right-click and select Add SQLite Connection….
+7.Navigate to your app.db file and select it. Make sure the Database Type is set to SQLite.
+8.Click OK to connect to the database.
+
+Der findes en employee med id: 22 og 3 offices med id 1,2 og 3
+
+**********************************************************************************************
+
+Jeg har valgt at anvende en N-layer pattern for den logiske indeling af kodebasen.  Man skulle meget gerne bare spinne API op via launchsettings og se swagger og teste der igennem.
 
 Udover dette er der anvendt vertical slice architecture for at indele koden i features og ikke i tekniske detalje, hvilket giver bedre overblik og maintainability.
 
